@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && copyfiles -u 1 src/view/**/*.html dist"
+    "depend": "npm install --save-dev @types/chrome",
+    "build_mac_linux": "tsc && cp -r src/view/ dist/view/",
+    "build_win": "tsc && xcopy /E /I src\\\\view\\\\ dist\\\\view\\\\"
   },
   "repository": {
     "type": "git",

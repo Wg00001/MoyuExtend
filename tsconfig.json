@@ -11,7 +11,7 @@
     "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
     "allowJs": true,                     // 允许编译 JavaScript 文件
     "resolveJsonModule": true,            // 支持导入 JSON 文件
-    "lib": ["dom", "es6", "chrome"],
+    "lib": ["dom", "es6"],
     "types": ["chrome"]
   },
   "include": [

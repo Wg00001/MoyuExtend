@@ -1,11 +1,14 @@
-moyu extend
-//todo:readme.md
 
-# 
-### 配置
-安装node.js后:
-``` npm install --save-dev @types/chrome ```
+## 简介
+项目名: MoyuExtend
+
+项目介绍: 读取页面的文章内容,将页面替换成CSDN的样式
+
+
+## 开发
+
 ### 目录
+
 ```text
 MoyuExtend
 ├── dist/            #输出目录
@@ -18,5 +21,9 @@ MoyuExtend
 ├── package.json
 └── tsconfig.json
 
-
 ```
+
+### 配置
+需要先安装`node.js`
+
+安装后在`package.json`中执行对应的script,以安装配置,和在不同的系统中编译该程序
