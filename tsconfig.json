@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                     // 目标编译为 ES6，确保支持浏览器现代特性
+    "module": "ESNext",                  // 使用 ES 模块系统，适合现代浏览器
+    "moduleResolution": "node",          // 使用 Node 风格的模块解析
+    "outDir": "./dist",                  // 编译后的 JavaScript 文件输出目录
+    "rootDir": "./src",                  // TypeScript 源文件所在的根目录
+    "strict": true,                      // 启用严格模式，确保类型安全
+    "esModuleInterop": true,             // 启用默认导入，兼容 CommonJS 模块
+    "skipLibCheck": true,                // 跳过库文件检查，加速编译
+    "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
+    "allowJs": true,                     // 允许编译 JavaScript 文件
+    "resolveJsonModule": true            // 支持导入 JSON 文件
+  },
+  "include": [
+    "src/model/**/*",                           // 包含 src 文件夹下的所有 TypeScript 文件
+    "src/view_model/**/*"                           // 包含 src 文件夹下的所有 TypeScript 文件
+  ],
+  "exclude": [
+    "node_modules",                      // 排除 node_modules 目录
+  ]
+}

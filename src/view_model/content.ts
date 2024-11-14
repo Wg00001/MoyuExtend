@@ -1,9 +1,9 @@
 // changePage.ts
 
-import "./content_acquirer/interface.ts"
-import {Content} from "./content_acquirer/interface";
-import {ContentJuejin} from "./content_acquirer/juejin";
-import {ContentZhihu} from "./content_acquirer/zhihu";
+import "../model/interface.ts"
+import {Content} from "../model/interface";
+import {ContentJuejin} from "../model/juejin";
+import {ContentZhihu} from "../model/zhihu";
 
 function changePage(content: Content): void {
     // 创建一个容器用于加载新页面的内容
@@ -17,7 +17,7 @@ function changePage(content: Content): void {
     const right_image_src: string = chrome.runtime.getURL("resource/right.png");
 
     // 加载自定义布局的HTML文件
-    fetch(chrome.runtime.getURL("newPage.html"))
+    fetch(chrome.runtime.getURL("new_page.html"))
         .then((response: Response) => response.text())
         .then((data: string) => {
             // 将获取到的 HTML 内容插入临时容器中

@@ -4,11 +4,11 @@
   "version": "1.0",
   "permissions": ["activeTab", "storage","scripting"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "dist/view/popup.html"
   },
   "web_accessible_resources": [
     {
-      "resources": [ "newPage.html"],
+      "resources": [ "dist/view/newPage.html"],
       "matches":["<all_urls>"]
     },
     {
@@ -19,8 +19,8 @@
 "content_scripts": [
     {
     "matches": ["<all_urls>"],
-    "js": ["content.js"],
-      "css": ["css.css"]
+    "js": ["dist/view_model/content.js"],
+      "css": ["dist/view/new_page.css"]
     }
 ]
 }
