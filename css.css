@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(0,0,0); /* 设置整个页面的背景颜色为白色 */
+    margin: 0; /* 清除默认的 body 边距 */
+    padding: 0; /* 清除默认的 body 内边距 */
+}
+
+#page-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* 确保包含内边距和边框 */
+}
+
+#top-image-container {
+    position: fixed; /* 固定位置 */
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+
+#top-image {
+    width: 100%;
+}
+
+#content-container {
+    display: flex;
+    justify-content: center; /* 居中内容 */
+    width: 100%;
+    height: 100vh; /* 高度填满视口 */
+    box-sizing: border-box;
+    padding-top: 50px; /* 为顶部图片留出空间 */
+}
+
+#left-image-container,
+#right-image-container {
+    position: fixed; /* 固定位置 */
+    top: 50px; /* 从页面顶部开始 */
+    width: 25%; /* 固定25%宽度 */
+    height: 100vh; /* 高度为视口高度 */
+    overflow: hidden; /* 防止内容溢出 */
+}
+
+#left-image-container {
+    left: 0; /* 左边固定 */
+}
+
+#right-image-container {
+    right: 0; /* 右边固定 */
+}
+
+#left-image,
+#right-image {
+    width: 100%;
+    height: auto;
+}
+
+
+#main-content {
+    flex: 1; /* 占用剩余空间 */
+    max-width: 50%; /* 内容宽度根据左右图片边界自动调整 */
+    margin-left: 25%;
+    margin-right: 25%;
+    box-sizing: border-box; /* 包括内边距在内 */
+    overflow: hidden; /* 防止内容溢出 */
+    word-wrap: break-word; /* 自动换行 */
+    overflow-wrap: break-word; /* 自动换行 */
+}
+
+
+#article{
+    padding: 10px;
+    border: 1px solid #ccc; /* 可选：为内容添加边框 */
+    border-radius: 15px; /* 设置圆角边框半径为15px */
+}
+
+#new-article-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+
+}
+
+#new-article-content {
+    font-size: 16px;
+}

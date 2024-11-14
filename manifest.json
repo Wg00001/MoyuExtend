@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "MoyuReader",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage","scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [ "newPage.html"],
+      "matches":["<all_urls>"]
+    },
+    {
+      "resources": ["resource/right.png","resource/top.png","resource/left.png"],
+      "matches":["<all_urls>"]
+    }
+  ],
+"content_scripts": [
+    {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+      "css": ["css.css"]
+    }
+]
+}
