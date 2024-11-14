@@ -54,8 +54,10 @@ function changePage(content: Content): void {
 }
 // content.ts
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.action === "getArticleData") {
+    if (request.action === "BuildPage") {
+        console.log("build page")
         const currentUrl = window.location.href;
+        console.log("get url:",currentUrl)
         if (!currentUrl) {
             console.log("当前页面没有 URL");
             return;  // 取消后续操作
@@ -63,16 +65,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         // 如果 currentUrl 的前缀是 "zhihu"
         let content: Content | null = null;
         if (currentUrl.startsWith("https://juejin.cn/post/")) {
+            console.log("https://juejin.cn/post/")
             content = new ContentJuejin; // 根据需求将 content 赋值为 "Zhihu"
         }
         if (currentUrl.startsWith("https://www.zhihu.com/question/")){
+            console.log("https://www.zhihu.com/question/")
             content = new ContentZhihu;
         }
         if(content == null){
             console.log("该页面暂未支持");
+            alert("该页面暂未支持")
             return;  // 取消后续操作
         }
         content.BuildContent()
+        console.log("build content")
         // 调用 changePage 函数并传入文章数据
         changePage(content);
     }

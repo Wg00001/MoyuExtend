@@ -1,11 +1,6 @@
 import {BaseContent, Content} from "./interface"; // 导入接口
 
 export class ContentJuejin extends BaseContent{
-     text: string | undefined;
-     title: string | undefined;
-
-
-
     GetArticleText(): string | undefined {
         // if (this.text != undefined){
         //     return this.text

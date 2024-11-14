@@ -3,8 +3,6 @@ import {BaseContent, Content} from "./interface";
 
 
 export class ContentZhihu extends BaseContent{
-     text: string | undefined;
-     title: string | undefined;
     GetArticleText(): string | undefined {
         // if (this.text != undefined){
         //     return this.text

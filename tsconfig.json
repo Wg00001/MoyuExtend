@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",                     // 目标编译为 ES6，确保支持浏览器现代特性
+    "target": "ESNext",                  // 目标编译为 ES6，确保支持浏览器现代特性
     "module": "ESNext",                  // 使用 ES 模块系统，适合现代浏览器
     "moduleResolution": "node",          // 使用 Node 风格的模块解析
     "outDir": "./dist",                  // 编译后的 JavaScript 文件输出目录
