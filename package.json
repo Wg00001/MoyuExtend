@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "depend": "npm install --save-dev @types/chrome",
-    "build_mac_linux": "tsc && cp -r src/view/ dist/view/",
-    "build_win": "tsc && xcopy /E /I src\\\\view\\\\ dist\\\\view\\\\"
+    "build_mac_linux": "tsc && cp -r src/view/ dist/view/ && cp manifest.json dist/",
+    "build_win": "tsc && xcopy /E /I src\\\\view\\\\ dist\\\\view\\\\ && xcopy src\\\\manifest.json dist\\\\"
   },
   "repository": {
     "type": "git",
