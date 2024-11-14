@@ -10,7 +10,9 @@
     "skipLibCheck": true,                // 跳过库文件检查，加速编译
     "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
     "allowJs": true,                     // 允许编译 JavaScript 文件
-    "resolveJsonModule": true            // 支持导入 JSON 文件
+    "resolveJsonModule": true,            // 支持导入 JSON 文件
+    "lib": ["dom", "es6", "chrome"],
+    "types": ["chrome"]
   },
   "include": [
     "src/model/**/*",                           // 包含 src 文件夹下的所有 TypeScript 文件

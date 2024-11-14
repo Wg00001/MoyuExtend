@@ -1,6 +1,5 @@
 // changePage.ts
 
-import "../model/interface.ts"
 import {Content} from "../model/interface";
 import {ContentJuejin} from "../model/juejin";
 import {ContentZhihu} from "../model/zhihu";
@@ -42,10 +41,10 @@ function changePage(content: Content): void {
             const contentElement = document.getElementById("new-article-content");
 
             if (titleElement) {
-                titleElement.textContent = content.title;
+                titleElement.textContent = content.title || "Get title fail";
             }
             if (contentElement) {
-                contentElement.innerHTML = content.text;
+                contentElement.innerHTML = content.text || "Get text fail";
             }
 
             // 移除临时容器
@@ -62,7 +61,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             return;  // 取消后续操作
         }
         // 如果 currentUrl 的前缀是 "zhihu"
-        let content: Content = null;
+        let content: Content | null = null;
         if (currentUrl.startsWith("https://juejin.cn/post/")) {
             content = new ContentJuejin; // 根据需求将 content 赋值为 "Zhihu"
         }
@@ -70,11 +69,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             content = new ContentZhihu;
         }
         if(content == null){
-            console.log("该网站暂未支持");
+            console.log("该页面暂未支持");
             return;  // 取消后续操作
         }
         content.BuildContent()
-
         // 调用 changePage 函数并传入文章数据
         changePage(content);
     }

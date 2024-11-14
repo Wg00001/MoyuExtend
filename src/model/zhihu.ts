@@ -1,8 +1,8 @@
-import "./interface.js"
-import {Content} from "./interface";
+
+import {BaseContent, Content} from "./interface";
 
 
-export class ContentZhihu implements Content{
+export class ContentZhihu extends BaseContent{
      text: string | undefined;
      title: string | undefined;
     GetArticleText(): string | undefined {
@@ -36,19 +36,10 @@ export class ContentZhihu implements Content{
         const titleElement = document.querySelector("h1.QuestionHeader-title");
         if (titleElement) {
             // 返回该元素的文本内容
-            return (titleElement as HTMLElement).innerText || (titleElement as HTMLElement).textContent;
+            return (titleElement as HTMLElement).innerText || (titleElement as HTMLElement).textContent || undefined;
         }
         // 如果没有找到该元素，返回 undefined
         return undefined;
-    }
-
-    BuildContent() {
-        try{
-            this.text = this.GetArticleText()
-            this.title = this.GetArticleTitle()
-        }catch (err :any) {
-            console.error("Error occurred:", err.message);
-        }
     }
 
 }

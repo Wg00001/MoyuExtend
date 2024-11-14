@@ -1,6 +1,6 @@
-import {Content} from "./interface"; // 导入接口
+import {BaseContent, Content} from "./interface"; // 导入接口
 
-export class ContentJuejin implements Content{
+export class ContentJuejin extends BaseContent{
      text: string | undefined;
      title: string | undefined;
 
@@ -31,16 +31,6 @@ export class ContentJuejin implements Content{
             return titleElement.textContent || titleElement.innerHTML;
         }
         return undefined;
-    }
-
-    BuildContent() {
-        try{
-            this.text = this.GetArticleText()
-            this.title = this.GetArticleTitle()
-        }catch (err :any) {
-            console.error("Error occurred:", err.message);
-        }
-
     }
 
 }

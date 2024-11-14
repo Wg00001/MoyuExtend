@@ -18,7 +18,12 @@
   ],
 "content_scripts": [
     {
-    "matches": ["<all_urls>"],
+    "matches": [
+      "http://127.0.0.1",
+      "http://localhost",
+      "https://juejin.cn",
+      "https://www.zhihu.com"
+    ],
     "js": ["dist/view_model/content.js"],
       "css": ["dist/view/new_page.css"]
     }
