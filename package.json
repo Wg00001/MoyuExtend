@@ -6,7 +6,7 @@
   "scripts": {
     "depend": "npm install --save-dev @types/chrome",
     "build_mac_linux": "tsc && cp -r src/view/ dist/view/ && cp manifest.json dist/ && cp -r resource/ dist/resource/",
-    "build_win": "tsc && xcopy /E /I src\\\\view\\\\ dist\\\\view\\\\ && xcopy src\\\\manifest.json dist\\\\"
+    "build_win": "tsc && xcopy /E /I src\\\\view\\\\ dist\\\\view\\\\ && xcopy src\\\\manifest.json dist\\\\ && xcopy resource\\\\ dist\\\\resource\\\\"
   },
   "repository": {
     "type": "git",
